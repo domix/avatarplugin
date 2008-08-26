@@ -1,0 +1,11 @@
+<plugin name='avatar-plugin' version='0.2'>
+  <author>Domingo Suarez Torres</author>
+  <authorEmail>domingo.suarez@gmail.com</authorEmail>
+  <title>Grails Avatar Plugin</title>
+  <description>	This plugin provides a taglib for displaying avatars. At the moment we only support gravatars (globally-recognized avatars).
+</description>
+  <documentation>http://grails.org/Avatar+Plugin</documentation>
+  <resources>
+    <resource>com.synergyj.grails.plugins.avatar.AvatarTagLib</resource>
+  </resources>
+</plugin>
