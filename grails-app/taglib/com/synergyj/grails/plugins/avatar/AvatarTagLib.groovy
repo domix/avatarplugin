@@ -35,14 +35,34 @@ class AvatarTagLib {
 		
 		if(attrs.cssClass) cssClass = attrs.cssClass
 
+		def dgu = null
 		if(attrs.defaultGravatarUrl) {
-			gravatarUrl += "?d=${attrs.defaultGravatarUrl}"
+			dgu = attrs.defaultGravatarUrl
 		} else {
-			def dgu = grailsApplication.config.avatarPlugin.defaultGravatarUrl
-			if(dgu) {
-				gravatarUrl += "?d=${dgu}"
+			dgu = grailsApplication.config.avatarPlugin.defaultGravatarUrl			
+		}
+		if(dgu) {
+			gravatarUrl += "?d=${dgu}"
+		}
+		
+		def gravatarRating = null
+		if(attrs.gravatarRating) {
+			gravatarRating = attrs.gravatarRating
+		} else {
+			gravatarRating = grailsApplication.config.avatarPlugin.gravatarRating
+		}
+		if(gravatarRating) {
+			if(gravatarUrl.contains('?')) {
+				gravatarUrl += "&r=${gravatarRating}"
+			}
+			else {
+				gravatarUrl += "?r=${gravatarRating}"
 			}
 		}
+		
+		
+		
+		
 		
         out << """
 			<img alt="$alt" class="$cssClass" height="$size" src="$gravatarUrl" width="$size" />
