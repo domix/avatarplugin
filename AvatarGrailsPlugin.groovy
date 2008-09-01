@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-class AvatarPluginGrailsPlugin {
+class AvatarGrailsPlugin {
     def version = 0.3
     def dependsOn = [:]
 

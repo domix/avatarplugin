@@ -1,4 +1,4 @@
-<plugin name='avatar-plugin' version='0.2'>
+<plugin name='avatar' version='0.3'>
   <author>Domingo Suarez Torres</author>
   <authorEmail>domingo.suarez@gmail.com</authorEmail>
   <title>Grails Avatar Plugin</title>

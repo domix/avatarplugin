@@ -1,4 +1,4 @@
-<project name="avatarplugin" default="test">
+<project name="avatar" default="test">
 
     <condition property="grails" value="grails.bat">
         <os family="windows"/>
