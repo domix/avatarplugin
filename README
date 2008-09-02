@@ -1,3 +1,7 @@
+Note:
+
+The official documentation is locate at: http://www.grails.org/Avatar+Plugin
+
 This plugin provides a taglib for displaying avatars. At the moment we only support gravatars (globally-recognized avatars).
 
 Gravatars allow users to configure an avatar to go with their email address at a central location: gravatar.com. Gravatar-aware websites can then look up and display each user‘s preferred avatar, without having to handle avatar management. The user gets the benefit of not having to set up an avatar for each site that they post on.
