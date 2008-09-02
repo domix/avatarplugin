@@ -1,0 +1,53 @@
+This plugin provides a taglib for displaying avatars. At the moment we only support gravatars (globally-recognized avatars).
+
+Gravatars allow users to configure an avatar to go with their email address at a central location: gravatar.com. Gravatar-aware websites can then look up and display each user‘s preferred avatar, without having to handle avatar management. The user gets the benefit of not having to set up an avatar for each site that they post on.
+
+
+
+==Installation==
+'grails install-plugin http://avatargrailsplugin.googlecode.com/files/grails-avatar-0.3.zip' 
+
+'grails install-plugin avatar'
+
+
+
+==Usage==
+
+The plugin usage is quite simple.
+
+Example: <avatar:gravatar email="${user.email}"/>
+
+The tagLib will generate the following HTML code: 
+<img alt="Gravatar" class="avatar" height="20" src="https://secure.gravatar.com/avatar/f2f68f9b5281cd7c2eb7eecba1" width="20" />
+
+As you can see, the taglib will generate some html default attributes like:
+
+ * heigth & width
+ * CSS class
+ * alt
+
+
+You can customize this default values as follows: 
+<avatar:gravatar email="${user.email}" alt="My Avatar" cssClass="myCss" size="50"/>
+
+Output:
+<img alt="My Avatar" class="myCss" height="50" src="https://secure.gravatar.com/avatar/f2f68f9b2814cd7c2eb7eecb9c" width="50" />
+
+
+Alternatively you can customize default avatar to users who don't have a Gravatar Account:
+<avatar:gravatar email="${user.email}" defaultGravatarUrl="${'http://mydomain.com/images/default-gravatar-80.png'.encodeAsURL()}" />
+
+Also can be set the Gravatar rating:
+<avatar:gravatar email="${user.email}" gravatarRating="G" />
+
+
+==Configuration==
+
+To avoid expensive configuration each time plugin usage, you can configure global settings as follows:
+
+In Config.groovy
+
+avatarPlugin {
+	defaultGravatarUrl="""http://yourdomain.com/images/default-gravatar-80.png"""
+	gravatarRating="G"
+}
