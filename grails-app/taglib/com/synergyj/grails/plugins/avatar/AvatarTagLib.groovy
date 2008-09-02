@@ -39,7 +39,7 @@ class AvatarTagLib {
 		if(attrs.defaultGravatarUrl) {
 			dgu = attrs.defaultGravatarUrl
 		} else {
-			dgu = grailsApplication.config.avatarPlugin.defaultGravatarUrl			
+			dgu = grailsApplication.config.avatarPlugin.defaultGravatarUrl
 		}
 		if(dgu) {
 			gravatarUrl += "?d=${dgu}"
@@ -59,10 +59,6 @@ class AvatarTagLib {
 				gravatarUrl += "?r=${gravatarRating}"
 			}
 		}
-		
-		
-		
-		
 		
         out << """
 			<img alt="$alt" class="$cssClass" height="$size" src="$gravatarUrl" width="$size" />
