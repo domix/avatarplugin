@@ -7,12 +7,12 @@ This plugin provides a taglib for displaying avatars. At the moment we only supp
 Gravatars allow users to configure an avatar to go with their email address at a central location: gravatar.com. Gravatar-aware websites can then look up and display each user‘s preferred avatar, without having to handle avatar management. The user gets the benefit of not having to set up an avatar for each site that they post on.
 
 
+==Code==
+Plugin code is located at GitHub http://github.com/domix/avatarplugin/tree/master
+
 
 ==Installation==
-'grails install-plugin http://avatargrailsplugin.googlecode.com/files/grails-avatar-0.3.zip' 
-
 'grails install-plugin avatar'
-
 
 
 ==Usage==
