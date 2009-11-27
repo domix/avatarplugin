@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 class AvatarGrailsPlugin {
-    def version = 0.3
+    def version = 0.4
     def dependsOn = [:]
 
     // TODO Fill in these fields

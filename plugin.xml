@@ -1,4 +1,4 @@
-<plugin name='avatar' version='0.3'>
+<plugin name='avatar' version='0.4' grailsVersion='1.1.1 &gt; *'>
   <author>Domingo Suarez Torres</author>
   <authorEmail>domingo.suarez@gmail.com</authorEmail>
   <title>Grails Avatar Plugin</title>
@@ -6,6 +6,8 @@
 </description>
   <documentation>http://grails.org/Avatar+Plugin</documentation>
   <resources>
+    <resource>UrlMappings</resource>
     <resource>com.synergyj.grails.plugins.avatar.AvatarTagLib</resource>
   </resources>
+  <dependencies />
 </plugin>

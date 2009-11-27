@@ -21,13 +21,13 @@ class AvatarTagLib {
 	
 	def gravatar = { attrs, body ->
 		if(!attrs.email) throw new IllegalStateException("Property [email] must be set!")
-		def email = attrs.email
+		String email = attrs.email.toString()
 		def size = 20
         def hash = MD5Util.md5Hex(email)
 		def alt = "Gravatar"
 		def cssClass = "avatar"
 		def gravatarBaseUrl = "https://secure.gravatar.com/avatar/"
-		def gravatarUrl = "$gravatarBaseUrl$hash"
+		String gravatarUrl = "$gravatarBaseUrl$hash"
 
 		if(attrs.size) size = attrs.size
 		
@@ -61,7 +61,7 @@ class AvatarTagLib {
 		}
 		
         out << """
-			<img alt="$alt" class="$cssClass" height="$size" src="$gravatarUrl" width="$size" />
+			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" />
 		"""
 	}
 }
