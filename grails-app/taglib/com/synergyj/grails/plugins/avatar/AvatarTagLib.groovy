@@ -18,7 +18,7 @@ import com.synergyj.grails.plugins.avatar.util.MD5Util
 
 class AvatarTagLib {
 	static namespace = "avatar"
-	
+
 	def gravatar = { attrs, body ->
 		if(!attrs.email) throw new IllegalStateException("Property [email] must be set!")
 		String email = attrs.email.toString()
@@ -26,13 +26,18 @@ class AvatarTagLib {
         def hash = MD5Util.md5Hex(email)
 		def alt = "Gravatar"
 		def cssClass = "avatar"
-		def gravatarBaseUrl = "https://secure.gravatar.com/avatar/"
+
+		def gravatarBaseUrl = "http://gravatar.com/avatar/"
+		if (request.isSecure()) {
+			gravatarBaseUrl = "https://secure.gravatar.com/avatar/"
+		}
+
 		String gravatarUrl = "$gravatarBaseUrl$hash"
 
 		if(attrs.size) size = attrs.size
-		
+
 		if(attrs.alt) alt = attrs.alt
-		
+
 		if(attrs.cssClass) cssClass = attrs.cssClass
 
 		def dgu = null
@@ -44,7 +49,7 @@ class AvatarTagLib {
 		if(dgu) {
 			gravatarUrl += "?d=${dgu}"
 		}
-		
+
 		def gravatarRating = null
 		if(attrs.gravatarRating) {
 			gravatarRating = attrs.gravatarRating
@@ -59,7 +64,7 @@ class AvatarTagLib {
 				gravatarUrl += "?r=${gravatarRating}"
 			}
 		}
-		
+
         out << """
 			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" />
 		"""
