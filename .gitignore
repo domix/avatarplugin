@@ -1,2 +1,5 @@
 .svn
 *.zip
+docs
+stacktrace.log
+target
