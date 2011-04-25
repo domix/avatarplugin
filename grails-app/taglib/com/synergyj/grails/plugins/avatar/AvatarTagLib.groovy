@@ -26,6 +26,7 @@ class AvatarTagLib {
         def hash = MD5Util.md5Hex(email)
 		def alt = "Gravatar"
 		def cssClass = "avatar"
+		def title = ''
 
 		def gravatarBaseUrl = "http://gravatar.com/avatar/"
 		if (request.isSecure()) {
