@@ -37,9 +37,11 @@ class AvatarTagLib {
 		if(attrs.size) size = attrs.size
 
 		if(attrs.alt) alt = attrs.alt
+        
+        if(attrs.title) title = attrs.title
 
 		if(attrs.cssClass) cssClass = attrs.cssClass
-
+        
 		def dgu = null
 		if(attrs.defaultGravatarUrl) {
 			dgu = attrs.defaultGravatarUrl
@@ -66,7 +68,7 @@ class AvatarTagLib {
 		}
 
         out << """
-			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" />
+			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" title="$title"/>
 		"""
 	}
 }
