@@ -13,8 +13,7 @@
  * limitations under the License.
  */
 class AvatarGrailsPlugin {
-	// the plugin version
-    def version = 0.4
+	def version = "0.4.1" // added by set-version
 	// the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.3.4 > *"
 	// the other plugins this plugin depends on
