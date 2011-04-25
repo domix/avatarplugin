@@ -3,3 +3,7 @@
 docs
 stacktrace.log
 target
+web-app/css/
+web-app/images/
+web-app/js/
+
