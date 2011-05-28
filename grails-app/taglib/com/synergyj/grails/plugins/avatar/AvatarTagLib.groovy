@@ -27,6 +27,8 @@ class AvatarTagLib {
 		def alt = "Gravatar"
 		def cssClass = "avatar"
 		def title = ''
+		def id = ''
+		def name = ''
 
 		def gravatarBaseUrl = "http://gravatar.com/avatar/"
 		if (request.isSecure()) {
@@ -42,6 +44,10 @@ class AvatarTagLib {
         if(attrs.title) title = attrs.title
 
 		if(attrs.cssClass) cssClass = attrs.cssClass
+		
+		if(attrs.name) name = attrs.name
+		
+		if(attrs.id) id = attrs.id
         
 		def dgu = null
 		if(attrs.defaultGravatarUrl) {
@@ -67,9 +73,13 @@ class AvatarTagLib {
 				gravatarUrl += "?r=${gravatarRating}"
 			}
 		}
+		
+		// The size is requested to gravatar in order to get the imaged in the requested size
+		// If we don't send the 's' parameter the image is received at 80x80
+		gravatarUrl += "&s=${size}"
 
         out << """
-			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" title="$title"/>
+			<img id="${id}" name="${name}" alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" title="$title"/>
 		"""
 	}
 }
