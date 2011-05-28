@@ -69,7 +69,28 @@ class AvatarTagLib {
 		}
 
         out << """
-			<img alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" title="$title"/>
+			<img alt='$alt' class='$cssClass' height='$size' width='$size' src='$gravatarUrl' title='$title'/>
 		"""
+	}
+	
+	
+	def twitter = { attrs, body ->
+	  def user
+    try{
+	   user = new XmlParser().parse("http://twitter.com/users/${attrs.user}.xml")
+	  }catch(FileNotFoundException){
+	    user = new XmlParser().parse("http://twitter.com/users/twitter.xml")
+	  }
+	  
+    def image = user.profile_image_url.text()
+    
+    def size = 20
+    def alt = "twitter"
+		def cssClass = "avatar"
+		def title = attrs.user
+    
+	  out << """
+  	  <img alt='$alt' class='$cssClass' height='${attrs?.size ?: 20}' width='${attrs?.size ?: 20}' src='$image' title='$title'/>
+    """
 	}
 }
