@@ -76,15 +76,14 @@ class AvatarTagLib {
 	
 	def twitter = { attrs, body ->
 	  def user
-    try{
-	   user = new XmlParser().parse("http://twitter.com/users/${attrs.user}.xml")
+    try{      
+	   user = new XmlParser().parse("http://api.twitter.com/1/users/show.xml?screen_name=${attrs.user}")
 	  }catch(FileNotFoundException){
-	    user = new XmlParser().parse("http://twitter.com/users/twitter.xml")
+	    user = new XmlParser().parse("http://api.twitter.com/1/users/show.xml?screen_name=twitter")
 	  }
 	  
     def image = user.profile_image_url.text()
     
-    def size = 20
     def alt = "twitter"
 		def cssClass = "avatar"
 		def title = attrs.user
