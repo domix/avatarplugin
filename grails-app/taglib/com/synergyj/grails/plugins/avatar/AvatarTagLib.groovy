@@ -15,6 +15,8 @@
 package com.synergyj.grails.plugins.avatar
 
 import com.synergyj.grails.plugins.avatar.util.MD5Util
+import groovyx.net.http.HTTPBuilder
+import static groovyx.net.http.Method.GET
 
 class AvatarTagLib {
 	static namespace = "avatar"
@@ -90,6 +92,27 @@ class AvatarTagLib {
     
 	  out << """
   	  <img alt='$alt' class='$cssClass' height='${attrs?.size ?: 20}' width='${attrs?.size ?: 20}' src='$image' title='$title'/>
+    """
+	}
+	
+	def facebook = { attrs, body ->
+	  def url = "https://graph.facebook.com/${attrs?.user ?: 'facebook'}/picture"
+	  new HTTPBuilder(url).request(GET) { req ->
+      response.success = { resp ->
+        def notFound = resp.headers.find { it.name.contains('WWW-Authenticate') }
+        if(notFound){
+          url = "https://graph.facebook.com/facebook/picture"
+        }
+      }
+      response.failure = { resp ->
+      }
+    }
+	  
+	  def alt = "facebook"
+		def cssClass = "avatar"
+		def title = attrs.user
+	  out << """
+  	  <img alt='$alt' class='$cssClass' height='${attrs?.size ?: 20}' width='${attrs?.size ?: 20}' src='$url' title='$title'/>
     """
 	}
 }

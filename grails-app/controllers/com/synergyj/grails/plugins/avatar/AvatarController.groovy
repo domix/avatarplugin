@@ -4,6 +4,6 @@ class AvatarController {
 
   def index = { }
   def obtain = {
-    render(view:'index',model:[email:params.email,twitter:params.twitter])
+    render(view:'index',model:[email:params.email,twitter:params.twitter,facebook:params.facebook])
   }
 }

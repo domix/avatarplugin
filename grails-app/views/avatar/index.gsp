@@ -13,5 +13,13 @@
       <input type="submit" name="submit" value="Show me...">
     </g:form>
         <avatar:twitter user="${twitter ?: 'twitter'}" size="50"/>
+        
+        <g:form name="obtainFacebook" url="[controller:'avatar',action:'obtain']" update="avatar">
+          Facebook: <g:textField name="facebook" />
+          <input type="submit" name="submit" value="Show me...">
+        </g:form>
+        <avatar:facebook user="${facebook ?: 'facebook'}" size="50"/>
+
+  
   </body>
 </html>
