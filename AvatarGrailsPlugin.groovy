@@ -1,4 +1,4 @@
-/* Copyright 2006-2007 the original author or authors.
+/* Copyright 2006-2011 the original author or authors.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 class AvatarGrailsPlugin {
-	def version = "0.4.1" // added by set-version
-	// the version or versions of Grails the plugin is designed for
+    def version = "0.4.1" // added by set-version
+    // the version or versions of Grails the plugin is designed for
     def grailsVersion = "1.2 > *"
-	// the other plugins this plugin depends on
+    // the other plugins this plugin depends on
     def dependsOn = [:]
-	// resources that are excluded from plugin packaging
+    // resources that are excluded from plugin packaging
     def pluginExcludes = [
             "grails-app/views/error.gsp",
-			"grails-app/i18n/messages.properties"
+            "grails-app/i18n/messages.properties"
     ]
 
     // TODO Fill in these fields
