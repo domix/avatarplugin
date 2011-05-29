@@ -6,4 +6,6 @@ target
 web-app/css/
 web-app/images/
 web-app/js/
-
+.idea/
+grails-avatar.iml
+grails-avatar-grailsPlugins.iml
