@@ -34,7 +34,7 @@ class AvatarGrailsPlugin {
     def authorEmail = "domingo.suarez@gmail.com"
     def title = "Grails Avatar Plugin"
     def description = '''\
-	This plugin provides a taglib for displaying avatars. At the moment we only support gravatars (globally-recognized avatars).
+	This plugin provides a taglib for displaying avatars. At the moment we support gravatars (globally-recognized avatars), Twitter avatar profile and Facebook avatar profile.
 '''
 
     // URL to the plugin's documentation
