@@ -19,6 +19,8 @@ Plugin code is located at GitHub http://github.com/domix/avatarplugin/tree/maste
 
 The plugin usage is quite simple.
 
+'For Gravatar image'
+
 Example: <avatar:gravatar email="${user.email}"/>
 
 The tagLib will generate the following HTML code: 
@@ -26,6 +28,7 @@ The tagLib will generate the following HTML code:
 
 As you can see, the taglib will generate some html default attributes like:
 
+ * id & name
  * heigth & width
  * CSS class
  * alt
@@ -44,14 +47,39 @@ Alternatively you can customize default avatar to users who don't have a Gravata
 Also can be set the Gravatar rating:
 <avatar:gravatar email="${user.email}" gravatarRating="G" />
 
+'For twitter image'
+
+Example: <avatar:twitter user="${user.twitter}"/>
+
+Output:
+<img alt='twitter' class='avatar' height='50' width='50' src='http://a0.twimg.com/profile_images/1124040897/at-twitter_normal.png' title='twitter'/>
+
+You can customize:
+ * heigth & width
+ * CSS class
+ * alt
+
+'For facebook image'
+
+Example: <avatar:facebook user="${user.facebookId}"/>
+
+Output:
+<img alt='facebook' class='avatar' height='50' width='50' src='https://graph.facebook.com/facebook/picture' title='facebook'/>
+
+You can customize:
+ * heigth & width
+ * CSS class
+ * alt
 
 ==Configuration==
 
 To avoid expensive configuration each time plugin usage, you can configure global settings as follows:
 
-In Config.groovy
+In Config.groovy for Gravatar service
 
 avatarPlugin {
 	defaultGravatarUrl="""http://yourdomain.com/images/default-gravatar-80.png"""
 	gravatarRating="G"
 }
+
+To use twitter and/or facebook avatars you don't need configuration
