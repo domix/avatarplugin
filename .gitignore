@@ -10,3 +10,5 @@ web-app/js/
 grails-avatar.iml
 grails-avatar-grailsPlugins.iml
 *.tld
+web-app/WEB-INF/sitemesh.xml
+web-app/WEB-INF/applicationContext.xml
