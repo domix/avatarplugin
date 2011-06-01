@@ -9,3 +9,4 @@ web-app/js/
 .idea/
 grails-avatar.iml
 grails-avatar-grailsPlugins.iml
+*.tld
