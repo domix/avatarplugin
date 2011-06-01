@@ -12,3 +12,4 @@ grails-avatar-grailsPlugins.iml
 *.tld
 web-app/WEB-INF/sitemesh.xml
 web-app/WEB-INF/applicationContext.xml
+plugin.xml
