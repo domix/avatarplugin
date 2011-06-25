@@ -69,8 +69,8 @@ class AvatarTagLib {
 
 		// The size is requested to gravatar in order to get the imaged in the requested size
 		// If we don't send the 's' parameter the image is received at 80x80
-		if (size >= 1 && size <= 512) {
-			gravatarUrl += "&s=${size}"
+		switch (size as Integer) {
+			case (1..512):	gravatarUrl += "&s=${size}"
 		}
 
 		out << """<img id="${id}" name="${name}" alt="$alt" class="$cssClass" height="$size" width="$size" src="$gravatarUrl" title="$title"/>"""
