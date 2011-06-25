@@ -21,5 +21,10 @@ class AvatarTagLibSpec extends TagLibSpec {
 		gravatar(email:e, defaultGravatarUrl:'monsterid').contains("d=monsterid")
 		gravatar(email:e, defaultGravatarUrl:'http://example.org/image.png').contains("d=http://example.org/image.png")
 		gravatar(email:e, defaultGravatarUrl:'https://secure.example.org/image.png').contains("d=https://secure.example.org/image.png")
+		!gravatar(email:e, size:'0').contains("s=0")
+		gravatar(email:e, size:'1').contains("s=1")
+		gravatar(email:e, size:'128').contains("s=128")
+		gravatar(email:e, size:'512').contains("s=512")
+		!gravatar(email:e, size:'513').contains("s=513")
 	}
 }
