@@ -3,8 +3,8 @@ grails.project.dependency.resolution = {
   }
   log "warn"
   plugins{
-	test "org.grails.plugins:code-coverage:1.2.4"
-	test "org.grails.plugins:spock:0.5-groovy-1.7"
+	test "org.grails.plugins:code-coverage:1.2.4" { export = false }
+	test "org.grails.plugins:spock:0.5-groovy-1.7" { export = false }
   }
   repositories {
     mavenLocal()
