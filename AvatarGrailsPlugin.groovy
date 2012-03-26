@@ -39,6 +39,13 @@ class AvatarGrailsPlugin {
 
     // URL to the plugin's documentation
     def documentation = "http://grails.org/plugin/avatar"
+    
+    def license = "APACHE"
+    def organization = [ name: "SindicatoSource", url: "http://sindica.to" ]
+    def developers = [
+            [ name: "Domingo Suarez Torres", email: "domingo.suarez@gmail.com" ]]
+    def issueManagement = [ system: "GITHUB", url: "https://github.com/domix/avatarplugin/issues" ]
+    def scm = [ url: "https://github.com/domix/avatarplugin" ]
 
     def doWithWebDescriptor = { xml ->
         // TODO Implement additions to web.xml (optional), this event occurs before 
