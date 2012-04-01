@@ -56,7 +56,7 @@ class AvatarTagLib {
 		def title			= attrs.remove('title')		?: ''
 		def id				= attrs.remove('id')		?: ''
 		def name			= attrs.remove('name')		?: ''
-		def dgu				= attrs.remove('defaultGravatarUrl')	?: grailsApplication.config.avatarPlugin.defaultGravatarUrl
+		def dgu				= (attrs.remove('defaultGravatarUrl')	?: grailsApplication.config.avatarPlugin.defaultGravatarUrl) ?: ''
 		def gravatarRating	= attrs.remove('gravatarRating')		?: grailsApplication.config.avatarPlugin.gravatarRating
 
 		def gravatarBaseUrl	= request.isSecure() ? "https://secure.gravatar.com/avatar/" : "http://gravatar.com/avatar/"
