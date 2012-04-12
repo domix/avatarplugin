@@ -24,3 +24,5 @@ grails.project.dependency.resolution = {
 	runtime 'xerces:xerces:2.4.0'
   }
 }
+
+grails.release.scm.enabled = false
