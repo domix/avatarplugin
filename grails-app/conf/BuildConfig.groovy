@@ -5,7 +5,7 @@ grails.project.dependency.resolution = {
   plugins{
 	test (":code-coverage:1.2.5") { export = false }
 	test ("org.spockframework:spock:0.6-groovy-1.8-SNAPSHOT") { export = false }
-	build (":release:1.0.2-SNAPSHOT") { export = false }
+	build (":release:2.0.0") { export = false }
   }
   repositories {
     mavenLocal()
