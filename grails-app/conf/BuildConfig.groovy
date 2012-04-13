@@ -13,6 +13,7 @@ grails.project.dependency.resolution = {
     grailsPlugins()
     grailsHome()
     grailsCentral()
+    grailsRepo "http://grails.org/plugins"
   }
   dependencies {
 	compile("org.codehaus.groovy.modules.http-builder:http-builder:0.5.2") {
@@ -26,3 +27,4 @@ grails.project.dependency.resolution = {
 }
 
 grails.release.scm.enabled = false
+grails.project.repos.default = "grailsCentral"
