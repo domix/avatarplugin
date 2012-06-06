@@ -3,9 +3,14 @@ grails.project.dependency.resolution = {
   }
   log "warn"
   plugins{
-	test (":code-coverage:1.2.5") { export = false }
-	test ("org.spockframework:spock:0.6-groovy-1.8-SNAPSHOT") { export = false }
-	build (":release:2.0.0") { export = false }
+	/*
+    This validation is for prevent load the following plugins in previous Grails versions.
+    I some Grails versions from 1.3.* the 'export = false' does not work. For Grails 2.* works properly
+    */
+    if (grailsVersion.startsWith('2')) {
+      build(":release:2.0.0") { export = false }
+      build ":tomcat:$grailsVersion"
+    }
   }
   repositories {
     mavenLocal()
@@ -14,15 +19,7 @@ grails.project.dependency.resolution = {
     grailsHome()
     grailsCentral()
     grailsRepo "http://grails.org/plugins"
-  }
-  dependencies {
-	compile("org.codehaus.groovy.modules.http-builder:http-builder:0.5.2") {
-		excludes 'groovy', 'xml-apis', 'xercesImpl', 'commons-lang'
-	}
-	runtime ('commons-httpclient:commons-httpclient:3.1') {
-	    excludes 'commons-logging', 'commons-codec'
-	}
-	runtime 'xerces:xerces:2.4.0'
+    mavenRepo "http://repo.grails.org/grails/plugins"
   }
 }
 
