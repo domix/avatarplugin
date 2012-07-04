@@ -56,8 +56,9 @@ class AvatarTagLib {
 		def name			= attrs.remove('name')		?: ''
 		def dgu				= (attrs.remove('defaultGravatarUrl')	?: grailsApplication.config.avatarPlugin.defaultGravatarUrl) ?: ''
 		def gravatarRating	= attrs.remove('gravatarRating')		?: grailsApplication.config.avatarPlugin.gravatarRating
+		def secureGravatar	= attrs.remove('secure')		?: grailsApplication.config.avatarPlugin.gravatarSecure
 
-		def gravatarBaseUrl	= request.isSecure() ? "https://secure.gravatar.com/avatar/" : "http://gravatar.com/avatar/"
+		def gravatarBaseUrl	= (secureGravatar ?: request.isSecure()) ? "https://secure.gravatar.com/avatar/" : "http://gravatar.com/avatar/"
 		String gravatarUrl	= "$gravatarBaseUrl$hash"
 		gravatarUrl	+= dgu.matches(/404|mm|identicon|monsterid|wavatar|retro|http.*/) ? "?d=${dgu}" : ''
 
