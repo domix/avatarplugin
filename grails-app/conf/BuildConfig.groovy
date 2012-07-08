@@ -9,7 +9,7 @@ grails.project.dependency.resolution = {
     */
     if (grailsVersion.startsWith('2')) {
       build(":release:2.0.3") { export = false }
-      build ":tomcat:$grailsVersion"
+      build(":tomcat:$grailsVersion") { export = false }
     }
   }
   repositories {
