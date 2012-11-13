@@ -15,6 +15,7 @@ Plugin code is located at GitHub http://github.com/domix/avatarplugin/tree/maste
 'grails install-plugin avatar'
 
 
+
 ==Usage==
 
 The plugin usage is quite simple.
