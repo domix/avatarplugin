@@ -5,7 +5,10 @@ class UrlMappings {
         // apply constraints here
       }
     }
-    "/"(controller: 'avatar', action: 'index')
     "500"(view: '/error')
+    name index: '/' {
+      controller = 'avatar'
+      action = [GET: 'index', POST: 'obtain']
+    }
   }
 }

@@ -15,8 +15,10 @@
 package com.synergyj.grails.plugins.avatar
 
 class AvatarController {
+  static allowedMethods = [index: 'GET', obtain: 'POST']
 
-  def index = { }
+  def index = {}
+
   def obtain = {
     render(view: 'index', model: [email: params.email, twitter: params.twitter, facebook: params.facebook])
   }

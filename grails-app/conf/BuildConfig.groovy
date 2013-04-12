@@ -3,14 +3,8 @@ grails.project.dependency.resolution = {
   }
   log "warn"
   plugins{
-	/*
-    This validation is for prevent load the following plugins in previous Grails versions.
-    In some Grails versions from 1.3.* the 'export = false' does not work. For Grails 2.* works properly
-    */
-    if (grailsVersion.startsWith('2')) {
-      build(":release:2.0.3") { export = false }
-      build(":tomcat:$grailsVersion") { export = false }
-    }
+    build(":release:2.2.1") { export = false }
+    build(":tomcat:$grailsVersion") { export = false }
   }
   repositories {
     mavenLocal()
